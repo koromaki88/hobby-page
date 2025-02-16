@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>koromaki88 Stuff</title>
+    <link rel="icon" href="assets/icons/favicon.ico">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <ul>
+                    <li><a href="#anilist" onclick="showTab('anilist')">Anilist</a></li>
+                    <li><a href="#other" onclick="showTab('other')">Other</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-hover-region"></div>
+        </div>
+
+        <div class="main-content">
+            <div id="anilist" class="tab-content">
+                <h2>Anilist Content</h2>
+                <div id="anilist-data"></div>
+            </div>
+            <div id="other" class="tab-content" style="display:none;">
+                <h2>Other Content</h2>
+                <p>This is where other content will go.</p>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/sidebar.js"></script>
+    <script src="scripts/anilist.js"></script>
+</body>
+
+</html>
