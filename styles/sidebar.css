@@ -1,6 +1,6 @@
 .sidebar {
-    width: 0px;
-    background-color: var(--background-color-medium);
+    width: 25px;
+    background-color: var(--background-color-default);
     color: white;
     position: relative;
     transition: width 0.3s ease;
@@ -17,7 +17,7 @@
 }
 
 .sidebar ul li a {
-    color: #fff;
+    color: var(--text-color-fg0);
     text-decoration: none;
 }
 
@@ -26,6 +26,19 @@
     opacity: 0;
     transition: opacity 0.3s ease;
 }
+
+.sidebar::before {
+    content: "»";
+    color: var(--text-color-fg4);
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    transition: color 0.3s ease;
+}
+
 
 /* Expanded Sidebar */
 .sidebar.expanded {

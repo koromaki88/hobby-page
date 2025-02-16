@@ -1,11 +1,13 @@
 :root {
     --background-color-hard: #1d2021;
-    --background-color-medium: #282828;
+    --background-color-default: #282828;
+    --text-color-fg0: #fbf1c7;
+    --text-color-fg4: #a89984;
 }
 
 body {
     font-family: Arial, sans-serif;
-    color: #fff;
+    color: var(--text-color-fg0);
     background-color: var(--background-color-hard);
     margin: 0;
     padding: 0;
