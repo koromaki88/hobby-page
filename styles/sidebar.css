@@ -25,6 +25,7 @@
     padding: 20px;
     opacity: 0;
     transition: opacity 0.3s ease;
+    white-space: nowrap;
 }
 
 .sidebar::before {
@@ -39,10 +40,8 @@
     transition: color 0.3s ease;
 }
 
-
-/* Expanded Sidebar */
 .sidebar.expanded {
-    width: 250px;
+    width: 175px;
 }
 
 .sidebar.expanded .sidebar-content {

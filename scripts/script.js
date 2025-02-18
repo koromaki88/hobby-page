@@ -5,5 +5,12 @@ function showTab(tabName) {
     });
 
     // Show the selected tab content
-    document.getElementById(tabName).style.display = 'block';
+    const selectedTab = document.getElementById(tabName);
+    if (selectedTab) {
+        selectedTab.style.display = 'block';
+    }
+}
+
+window.onload = () => {
+    showTab('home');
 }
