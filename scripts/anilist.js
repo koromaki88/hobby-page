@@ -14,12 +14,20 @@ function displayUserStats(user) {
 }
 
 function displayRecentActivity(activities) {
-    const timelineDiv = document.createElement('div');
-    timelineDiv.className = 'timeline';
+    let timelineDiv = document.querySelector('#anilist-data .timeline');
 
-    activities.forEach(activity => {
+    if (!timelineDiv) {
+        timelineDiv = document.createElement('div');
+        timelineDiv.className = 'timeline';
+        document.getElementById('anilist-data').appendChild(timelineDiv);
+    }
+
+    timelineDiv.innerHTML = "";
+
+    activities.forEach((activity, index) => {
         const activityDiv = document.createElement('div');
         activityDiv.className = 'timeline-item';
+        activityDiv.style.animationDelay = `${index * 0.1}s`;
 
         const date = new Date(activity.createdAt * 1000).toLocaleDateString();
 

@@ -9,8 +9,11 @@ function showTab(tabName) {
     if (selectedTab) {
         selectedTab.style.display = 'block';
     }
+
+    sessionStorage.setItem('activeTab', tabName);
 }
 
 window.onload = () => {
-    showTab('home');
+    const activeTab = sessionStorage.getItem('activeTab') || 'home';
+    showTab(activeTab);
 }
