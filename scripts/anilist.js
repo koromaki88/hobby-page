@@ -39,13 +39,6 @@ function displayRecentActivity(activities) {
                     <p>Date: ${date}</p>
                 </div>
             `;
-        } else if (activity.__typename === 'MessageActivity') {
-            activityDiv.innerHTML = `
-                <div class="details>
-                    <p>Message to ${activity.recipient.name}: ${activity.message}</p>
-                    <p>Date: ${date}</p>
-                </div>
-            `;
         }
 
         timelineDiv.appendChild(activityDiv);

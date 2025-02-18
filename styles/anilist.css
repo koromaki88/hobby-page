@@ -1,0 +1,35 @@
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--background-color-medium);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.cover-image {
+    width: 80px;
+    height: 110px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.details h3 {
+    font-size: 16px;
+    margin: 0;
+    color: var(--text-color-fg0);
+}
+
+.details p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: var(--text-color-fg4);
+}

@@ -1,6 +1,8 @@
 :root {
     --background-color-hard: #1d2021;
+    --background-color-medium: #232526;
     --background-color-default: #282828;
+    --background-color-bg1: #3c3836;
     --text-color-fg0: #fbf1c7;
     --text-color-fg4: #a89984;
 }
