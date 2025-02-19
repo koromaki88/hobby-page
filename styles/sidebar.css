@@ -1,10 +1,14 @@
 .sidebar {
     width: 25px;
+    height: 100vh;
     background-color: var(--background-color-default);
     color: white;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     transition: width 0.3s ease;
     overflow: hidden;
+    z-index: 1000;
 }
 
 .sidebar ul {
@@ -42,6 +46,10 @@
 
 .sidebar.expanded {
     width: 175px;
+}
+
+.sidebar.expanded~.main-content {
+    margin-left: 175px;
 }
 
 .sidebar.expanded .sidebar-content {

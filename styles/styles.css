@@ -17,6 +17,53 @@ body {
     height: 100vh;
 }
 
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.home-profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 10px solid var(--background-color-bg1);
+    object-fit: cover;
+}
+
+.home-profile-name {
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: var(--text-color-fg0);
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-link {
+    background-color: var(--background-color-default);
+    padding: 15px 20px 10px 21px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #555;
+}
+
+.social-icons {
+    width: 30px;
+    height: 30px;
+}
+
 .dashboard {
     display: flex;
     width: 100%;
@@ -25,6 +72,8 @@ body {
 .main-content {
     flex-grow: 1;
     padding: 20px;
+    margin-left: 25px;
+    transition: margin-left 0.3s ease;
 }
 
 .tab-content {
