@@ -16,13 +16,22 @@
     padding: 0;
 }
 
-.sidebar ul li {
-    margin: 15px 0;
-}
-
 .sidebar ul li a {
     color: var(--text-color-fg0);
     text-decoration: none;
+    display: block;
+    padding: 8px 20px;
+    border-radius: 7px;
+    margin-left: -30px;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a:active {
+    background-color: var(--background-color-medium);
 }
 
 .sidebar-content {

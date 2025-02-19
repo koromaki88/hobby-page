@@ -5,8 +5,6 @@ function capitalizeFirstLetter(str) {
 function displayUserStats(user) {
     const anilistDataDiv = document.getElementById('anilist-data');
     anilistDataDiv.innerHTML = `
-        <h3>${user.name}</h3>
-        <img src="${user.avatar.large}" alt="${user.name}" width="100">
         <p>Anime Count: ${user.statistics.anime.count}</p>
         <p>Mean Score: ${user.statistics.anime.meanScore}</p>
         <p>Minutes Watched: ${user.statistics.anime.minutesWatched}</p>
@@ -61,10 +59,6 @@ async function fetchUserData(username) {
     query ($username: String) {
       User(name: $username) {
         id
-        name
-        avatar {
-          large
-        }
         statistics {
           anime {
             count
