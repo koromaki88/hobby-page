@@ -33,5 +33,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.stopPropagation();
             }
         });
+
+        link.addEventListener('click', function(e) {
+            if (!isExpanded) {
+                e.preventDefault();
+                toggleSidebar();
+                setTimeout(() => {
+                    window.location.href = this.href;
+                }, 300);
+            }
+        });
     });
 });
