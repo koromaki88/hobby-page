@@ -37,8 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isExpanded) {
                 e.preventDefault();
                 toggleSidebar(true);
-            } else {
-                e.stopPropagation();
+                setTimeout(() => {
+                    window.location.href = this.href;
+                }, 300);
             }
         });
 
@@ -54,9 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.addEventListener('touchstart', function(event) {
-        const isClickInsideSidebar = sidebar.contains(event.target);
-
-        if (isExpanded && !isClickInsideSidebar) {
+        if (isExpanded && !sidebar.contains(event.target)) {
             toggleSidebar(false);
         }
     });
