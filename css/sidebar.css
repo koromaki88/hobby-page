@@ -1,14 +1,14 @@
 .sidebar {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: width 0.3s ease;
     width: 25px;
     height: 100vh;
     background-color: var(--background-color-default);
     color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transition: width 0.3s ease;
-    overflow: hidden;
-    z-index: 1000;
 }
 
 .sidebar ul {
@@ -17,16 +17,17 @@
 }
 
 .sidebar ul li a {
-    color: var(--text-color-fg0);
-    text-decoration: none;
+    position: relative;
+    left: -20px;
     display: block;
-    padding: 8px 20px;
-    border-radius: 7px;
-    margin-left: -30px;
-    text-align: left;
     overflow: hidden;
+    padding: 8px 20px;
+    width: calc(100% + 50px);
     white-space: nowrap;
     transition: background-color 0.3s ease;
+    color: var(--text-color-fg0);
+    text-align: left;
+    text-decoration: none;
 }
 
 .sidebar ul li a:hover,
@@ -39,18 +40,25 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     white-space: nowrap;
+    pointer-events: none;
+}
+
+.sidebar.expanded .sidebar-content {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .sidebar::before {
-    content: "»";
-    color: var(--text-color-fg4);
-    font-size: 20px;
-    font-weight: bold;
     position: absolute;
+    z-index: 1001;
     top: 50%;
     right: 8px;
     transform: translateY(-50%);
     transition: color 0.3s ease;
+    content: "»";
+    color: var(--text-color-fg4);
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .sidebar.expanded {
