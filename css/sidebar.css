@@ -3,12 +3,13 @@
     z-index: 1000;
     top: 0;
     left: 0;
-    overflow: hidden;
+    overflow: visible;
     transition: width 0.3s ease;
     width: 25px;
     height: 100vh;
     background-color: var(--background-color-default);
     color: white;
+    cursor: pointer;
 }
 
 .sidebar ul {
@@ -18,16 +19,17 @@
 
 .sidebar ul li a {
     position: relative;
-    left: -20px;
     display: block;
     overflow: hidden;
     padding: 8px 20px;
-    width: calc(100% + 50px);
+    width: 100%;
     white-space: nowrap;
     transition: background-color 0.3s ease;
     color: var(--text-color-fg0);
     text-align: left;
     text-decoration: none;
+    pointer-events: auto;
+    box-sizing: border-box;
 }
 
 .sidebar ul li a:hover,
@@ -36,7 +38,7 @@
 }
 
 .sidebar-content {
-    padding: 20px;
+    position: relative;
     opacity: 0;
     transition: opacity 0.3s ease;
     white-space: nowrap;
@@ -44,6 +46,9 @@
 }
 
 .sidebar.expanded .sidebar-content {
+    position: static;
+    left: 0;
+    width: 100%;
     opacity: 1;
     pointer-events: auto;
 }
