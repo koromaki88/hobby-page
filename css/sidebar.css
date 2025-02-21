@@ -3,7 +3,7 @@
     z-index: 1000;
     top: 0;
     left: 0;
-    overflow: visible;
+    overflow: hidden;
     transition: width 0.3s ease;
     width: 25px;
     height: 100vh;
