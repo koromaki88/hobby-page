@@ -3,12 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var isExpanded = false;
 
     function toggleSidebar() {
-        if (isExpanded) {
-            sidebar.classList.remove('expanded');
-        } else {
-            sidebar.classList.add('expanded');
-        }
-        isExpanded = !isExpanded;
+        sidebar.classList.toggle('expanded');
+        isExpanded = sidebar.classList.contains('expanded');
     }
 
     sidebar.addEventListener('mouseenter', function() {
@@ -24,26 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     sidebar.addEventListener('touchstart', function(event) {
-        const link = event.target.closest('a');
-        if (link) {
-            return;
-        }
-
-        setTimeout(function() {
+        if (!isExpanded) {
             event.preventDefault();
             toggleSidebar();
-        }, 100);
+        }
     });
 
     document.querySelectorAll('.sidebar ul li a').forEach(link => {
         link.addEventListener('touchstart', function(e) {
-            e.stopPropagation();
-            this.click();
-        });
-
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const tabName = this.getAttribute('onclick').match(/showTab\('([^']+)'\)/)[1];
+            if (!isExpanded) {
+                e.preventDefault();
+                toggleSidebar();
+            } else {
+                e.stopPropagation();
+            }
         });
     });
 });
