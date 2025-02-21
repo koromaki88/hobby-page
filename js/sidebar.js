@@ -26,11 +26,16 @@ document.addEventListener('DOMContentLoaded', function() {
     sidebar.addEventListener('touchstart', function(event) {
         const link = event.target.closest('a');
         if (link) {
-            event.preventDefault();
             return;
         }
 
         event.preventDefault();
         toggleSidebar();
+    });
+
+    document.querySelectorAll('.sidebar ul li a').forEach(link => {
+        link.addEventListener('touchstart', function(e) {
+            e.stopPropagation();
+        });
     });
 });
