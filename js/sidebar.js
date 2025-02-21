@@ -20,10 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     sidebar.addEventListener('touchstart', function(event) {
-        if (!isExpanded) {
-            event.preventDefault();
-            toggleSidebar();
-        }
+        event.preventDefault();
+        toggleSidebar();
     });
 
     document.querySelectorAll('.sidebar ul li a').forEach(link => {
